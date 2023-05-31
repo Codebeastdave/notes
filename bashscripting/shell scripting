@@ -1,0 +1,153 @@
+shell script : The basic concept of a shell script is a list of commands, which are listed in the order of execution. A good shell script will have comments, preceded by a pound sign or hash mark, # , describing the steps. There are conditional tests, such as value A is greater than value B, loops allowing us to go through massive amounts of data, files to read and store data, variables to read and store data, and the script may include functions.
+Shell scripts and functions are both interpreted. This means they are not compiled. Both shell scripts and functions are ASCII text that is read by the shell command interpreter. When we execute a shell script, or function, a command interpreter goes through the ASCII text line-by-line, loop-by-loop, test-by-test, and executes each statement as each line is reached from the top to the bottom.
+Control Structures
+	The following control structures will be used extensively.
+if . . . then statement
+if [ test_command ]
+	then
+		commands
+	fi
+		if . . . then . . . else statement
+	if [ test_command ]
+		then
+			commands
+		else
+			commands
+	fi
+
+if . . . then . . . elif . . . (else) statement
+if [ test_command ]
+then
+	commands
+elif [ test_command ]
+then
+	commands
+elif [ test_command ]
+	then
+		commands
+	else
+		(Optional)
+	commands
+	
+	fi
+for . . . in statement
+for loop_variable in argument_list
+do
+	commands
+done	
+while statement
+while test_condition_is_true
+do
+	commands
+done
+until statement
+until
+	do
+		test_condition_is_true
+	commands
+done
+
+case statement
+case $variable
+in
+match_1)
+commands_to_execute_for_1
+;;
+match_2)
+commands_to_execute_for_2
+;;
+match_3)
+commands_to_execute_for_3
+;;
+.
+.
+.
+*)
+(Optional - any other value)
+commands_to_execute_for_no_match
+;;
+esac
+
+
+The break command is used to terminate the execution of the entire loop, after
+completing the execution of all the lines of code up to the break statement. It
+then steps down to the code following the end of the loop.
+The continue command is used to transfer control to the next set of code, but it
+continues execution of the loop.
+The exit command will do just what one would expect: it exits the entire script.
+An integer may be added to an exit command (for example, exit 0 ), which will
+be sent as the return code.
+The return command is used in a function to send data back, or return a result or
+return code, to the calling script.
+A here document is used to redirect input into an interactive shell script or program. We can run an interactive program within a shell script without user action by supplying
+the required input for the interactive program, or interactive shell script. This is why it is called a here document: the required input is here, as opposed to somewhere else.
+A here document is used to redirect input into an interactive shell script or program. We
+can run an interactive program within a shell script without user action by supplying
+the required input for the interactive program, or interactive shell script. This is why
+it is called a here document: the required input is here, as opposed to somewhere else.
+This is the syntax for a here document:
+program_name <<LABEL
+Program_Input_1
+Program_Input_2
+Program_Input_3
+Program_Input_#
+LABEL
+
+Here Document
+A here document is used to redirect input into an interactive shell script or program. We
+can run an interactive program within a shell script without user action by supplying
+the required input for the interactive program, or interactive shell script. This is why
+it is called a here document: the required input is here, as opposed to somewhere else.
+This is the syntax for a here document:
+program_name <<LABEL
+Program_Input_1
+Program_Input_2
+Program_Input_3
+Program_Input_#
+LABEL
+$passwd Changes user password
+wildcards: * matches any number of characters; ? matches a single
+character
+$file Prints the type of file
+$cat Displays the contents of a file
+$pg or page Displays the contents of a file one page at a time
+$more Displays the contents of a file one page at a time
+$clear Clears the screen
+$cp or copy Copies a file
+$chown Changes the owner of a file
+$chgrp Changes the group of a file
+$chmod Changes file modes, permissions
+$rm Removes a file from the system
+$mv Renames a file
+$Mkdir Creates a directory
+
+rmdir Removes a directory
+grep Pattern matching
+egrep grep command for extended regular expressions
+find Locates files and directories
+>> Appends to the end of a file
+>
+Redirects, creates, or overwrites a file
+| Strings commands together, known as a pipe
+|| Logical OR — command1 || command2 — execute command2
+if command1 fails
+& Executes in background
+&& Logical AND — command1 && command2 — execute command2
+if command1 succeeds
+date Displays the system date and time
+echo Writes strings to standard output
+sleep Halts execution for the specified number of seconds
+wc Counts the number of words, lines, and characters in a file
+head Views the top of a file
+tail Views the end of a file
+diff Compares two files
+sdiff Compares two files side by side (requires 132-character
+display)
+spell Spell checker
+lp , lpr , enq , qprt Prints a file
+lpstat Status of system print queues
+enable Enables, or starts, a print queue
+disable Disables, or stops, a print queue
+cal Displays a calendar
+who Displays information about users on the system
+w Extended who command
